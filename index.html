@@ -3,35 +3,36 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Tubing Genting - Teras Desa Adventure</title>
+<title>Tubing Genting | Teras Desa Adventure</title>
 
 <style>
 *{
 margin:0;
 padding:0;
 box-sizing:border-box;
-font-family:Arial,Helvetica,sans-serif;
+scroll-behavior:smooth;
+font-family:Arial,sans-serif;
 }
 
 body{
-background:#f5f7f5;
+background:#f5f5f5;
 color:#333;
-line-height:1.6;
 }
 
 header{
-background:#0B6E4F;
-color:white;
+background:#0d7b55;
 padding:15px 8%;
 display:flex;
 justify-content:space-between;
 align-items:center;
-position:sticky;
+position:fixed;
+width:100%;
 top:0;
+z-index:999;
 }
 
 header h2{
-font-size:28px;
+color:white;
 }
 
 nav a{
@@ -42,84 +43,145 @@ font-weight:bold;
 }
 
 .hero{
-background:linear-gradient(rgba(0,0,0,.45),rgba(0,0,0,.45)),
-url("https://images.unsplash.com/photo-1500375592092-40eb2168fd21?auto=format&fit=crop&w=1400&q=80");
-background-size:cover;
-background-position:center;
-height:90vh;
+height:100vh;
+background:url("images/banner.jpg") center/cover;
 display:flex;
 justify-content:center;
 align-items:center;
 text-align:center;
+position:relative;
+}
+
+.hero::before{
+content:"";
+position:absolute;
+width:100%;
+height:100%;
+background:rgba(0,0,0,.45);
+}
+
+.hero-content{
+position:relative;
 color:white;
 padding:20px;
 }
 
 .hero h1{
-font-size:52px;
-margin-bottom:15px;
-}
-
-.hero p{
-font-size:22px;
-margin-bottom:25px;
-}
-
-.button{
-display:inline-block;
-padding:15px 30px;
-background:#ff9800;
-color:white;
-text-decoration:none;
-border-radius:40px;
-font-weight:bold;
-margin:10px;
-}
-
-section{
-padding:60px 10%;
-}
-
-h2{
-color:#0B6E4F;
+font-size:55px;
 margin-bottom:20px;
 }
 
-.cards{
+.hero p{
+font-size:24px;
+margin-bottom:30px;
+}
+
+.btn{
+display:inline-block;
+padding:15px 35px;
+background:#ff9800;
+color:white;
+text-decoration:none;
+border-radius:50px;
+font-size:20px;
+font-weight:bold;
+}
+
+section{
+padding:80px 10%;
+}
+
+h2{
+text-align:center;
+color:#0d7b55;
+margin-bottom:40px;
+font-size:36px;
+}
+
+.about{
 display:grid;
-grid-template-columns:repeat(auto-fit,minmax(250px,1fr));
-gap:20px;
+grid-template-columns:1fr 1fr;
+gap:40px;
+align-items:center;
+}
+
+.about img{
+width:100%;
+border-radius:15px;
 }
 
 .card{
 background:white;
-padding:20px;
-border-radius:12px;
+padding:30px;
+border-radius:15px;
 box-shadow:0 5px 15px rgba(0,0,0,.1);
 }
 
-footer{
-background:#0B6E4F;
-color:white;
-text-align:center;
-padding:25px;
-margin-top:50px;
+.grid{
+display:grid;
+grid-template-columns:repeat(auto-fit,minmax(280px,1fr));
+gap:25px;
 }
 
-.whatsapp{
-position:fixed;
-bottom:20px;
-right:20px;
-background:#25D366;
+.gallery img{
+width:100%;
+height:220px;
+object-fit:cover;
+border-radius:15px;
+transition:.3s;
+}
+
+.gallery img:hover{
+transform:scale(1.05);
+}
+
+footer{
+background:#0d7b55;
 color:white;
-padding:15px 20px;
+text-align:center;
+padding:30px;
+}
+
+.wa{
+position:fixed;
+right:20px;
+bottom:20px;
+background:#25d366;
+color:white;
+padding:18px 28px;
 border-radius:50px;
 text-decoration:none;
+font-size:18px;
 font-weight:bold;
+}
+
+@media(max-width:768px){
+
+.about{
+grid-template-columns:1fr;
+}
+
+.hero h1{
+font-size:38px;
+}
+
+.hero p{
+font-size:18px;
+}
+
+header{
+flex-direction:column;
+}
+
+nav{
+margin-top:10px;
+}
+
 }
 </style>
 
 </head>
+
 <body>
 
 <header>
@@ -129,6 +191,8 @@ font-weight:bold;
 <nav>
 <a href="#tentang">Tentang</a>
 <a href="#paket">Paket</a>
+<a href="#galeri">Galeri</a>
+<a href="#lokasi">Lokasi</a>
 <a href="#kontak">Kontak</a>
 </nav>
 
@@ -136,7 +200,7 @@ font-weight:bold;
 
 <section class="hero">
 
-<div>
+<div class="hero-content">
 
 <h1>SEGEEERNYA NAGIIIH!!</h1>
 
@@ -145,14 +209,9 @@ Nikmati serunya River Tubing bersama keluarga,
 teman dan komunitas di Teras Desa Adventure.
 </p>
 
-<a class="button"
+<a class="btn"
 href="https://wa.me/6288220046496">
 Booking WhatsApp
-</a>
-
-<a class="button"
-href="https://docs.google.com/forms/d/e/1FAIpQLSfZiv8LE4Pdk7A-t6V1FozBRYXkWi_5J4OTr6egDHhYhcBppA/viewform">
-Form Booking
 </a>
 
 </div>
@@ -163,58 +222,33 @@ Form Booking
 
 <h2>Tentang Kami</h2>
 
-<p>
+<div class="about">
 
-Tubing Genting merupakan destinasi wisata alam
-yang berada di Desa Getas, Kecamatan Singorojo,
-Kabupaten Kendal, Jawa Tengah.
-
-Kami menyediakan pengalaman river tubing,
-fun games, gathering, camping dan aktivitas
-outdoor yang aman serta menyenangkan.
-
-</p>
-
-</section>
-
-<section id="paket">
-
-<h2>Paket Wisata</h2>
-
-<div class="cards">
+<img src="images/tentang.jpg">
 
 <div class="card">
 
-<h3>Fun Tubing</h3>
+<h3>Tubing Genting</h3>
 
-<h1>Rp125.000</h1>
-
-<p>
-River Tubing + Guide + Safety Equipment + Snack
-</p>
-
-</div>
-
-<div class="card">
-
-<h3>Family Happy</h3>
-
-<h1>Rp350.000</h1>
+<br>
 
 <p>
-Tubing + Makan + Dokumentasi + Fun Games
-</p>
 
-</div>
+Tubing Genting merupakan destinasi wisata
+susur sungai yang berada di Desa Getas,
+Kecamatan Singorojo,
+Kabupaten Kendal,
+Jawa Tengah.
 
-<div class="card">
+Dengan panorama alam yang masih asri,
+air yang jernih,
+serta didukung pemandu profesional,
+aktivitas ini sangat cocok untuk keluarga,
+komunitas,
+instansi,
+sekolah,
+hingga perusahaan.
 
-<h3>Gathering</h3>
-
-<h1>Rp450.000</h1>
-
-<p>
-Tubing + Outbound + Makan + Dokumentasi
 </p>
 
 </div>
@@ -225,67 +259,30 @@ Tubing + Outbound + Makan + Dokumentasi
 
 <section>
 
-<h2>Lokasi</h2>
+<h2>Kenapa Memilih Kami?</h2>
 
-<p>
+<div class="grid">
 
-Getas, Kecamatan Singorojo,
-Kabupaten Kendal, Jawa Tengah.
+<div class="card">
+<h3>✔️ Pemandu Berpengalaman</h3>
+<p>Didampingi guide profesional.</p>
+</div>
 
-</p>
+<div class="card">
+<h3>✔️ Peralatan Standar</h3>
+<p>Pelampung dan helm berkualitas.</p>
+</div>
 
-<p>
+<div class="card">
+<h3>✔️ Pemandangan Alam</h3>
+<p>Sungai alami yang masih asri.</p>
+</div>
 
-Google Maps:
+<div class="card">
+<h3>✔️ Cocok Semua Usia</h3>
+<p>Aman untuk keluarga dan rombongan.</p>
+</div>
 
-<br><br>
-
-https://maps.app.goo.gl/c7qpPTyznQz1jC6f8
-
-</p>
-
-</section>
-
-<section id="kontak">
-
-<h2>Hubungi Kami</h2>
-
-<p>
-
-WhatsApp Booking
-
-<br>
-
-<strong>0882-2004-6496</strong>
-
-</p>
+</div>
 
 </section>
-
-<footer>
-
-<h3>Tubing Genting</h3>
-
-<p>
-
-© 2026 Teras Desa Adventure
-
-</p>
-
-</footer>
-
-<a class="whatsapp"
-href="https://wa.me/6288220046496">
-
-Chat WhatsApp
-
-</a>
-📷 📷
-📷 📷
-
-📷 📷
-📷 📷
-
-📷 📷
-</body>
-</html>
